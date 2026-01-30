@@ -76,24 +76,47 @@ amaris-test-automation/
 ### Prerequisites
 
 - Node.js (LTS version recommended)
-- npm or yarn
+ 
+- npm
+
 
 ### Setup Steps
 
-1. **Clone the repository**
+1. **Download and install Node.js**
+   - Go to the official website: https://nodejs.org  
+   - Download the **LTS (Long Term Support)** version  
+   - Install using default settings  
+
+   Verify installation:
+
+   ```bash
+   node -v
+   npm -v
+   ```
+2. **Clone the repository**
 
    ```bash
    git clone <repository-url>
    cd amaris-test-automation
    ```
 
-2. **Install dependencies**
+3. **Download node version** (Optional)
+
+> ⚠️ This step is required **only when creating the project for the first time**.
+
+   Run the following command:
+
+   ```bash
+   npm init playwright@latest
+   ```
+
+4. **Install dependencies**
 
    ```bash
    npm install
    ```
-
-3. **Install Playwright browsers**
+   
+5. **Install Playwright browsers**
 
    ```bash
    npx playwright install
@@ -381,10 +404,6 @@ test('should search for a hotel successfully', async ({
 2. Write meaningful commit messages
 3. Add tests for new features
 4. Update documentation as needed
-
-## 📝 License
-
-ISC
 
 ---
 
