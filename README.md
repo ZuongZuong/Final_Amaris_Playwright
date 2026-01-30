@@ -277,9 +277,6 @@ Key settings:
 Currently configured for:
 
 - ✅ Chromium (Desktop Chrome)
-- ⚪ Firefox (commented out)
-- ⚪ WebKit (commented out)
-- ⚪ Mobile browsers (commented out)
 
 ## 📈 Reporting
 
