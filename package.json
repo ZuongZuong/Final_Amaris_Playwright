@@ -1,0 +1,26 @@
+{
+  "name": "amaris-test-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report",
+    "test:ui:report": "npx playwright test --ui --reporter=html",
+    "trace:open": "npx playwright show-trace",
+    "trace:latest": "npx playwright show-trace ./test-results/trace/trace.zip"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/node": "^25.1.0"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0"
+  }
+}
