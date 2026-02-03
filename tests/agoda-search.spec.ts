@@ -12,7 +12,6 @@ test.describe('Agoda Search a hotel', () => {
         // // 1. Set Destination
         await homePage.searchHotel('Muong Thanh Saigon Centre Hotel');
 
-        // await homePage.clickCheckinBox();
         await homePage.selectDates(DateUtils.getDateWithOffset(2));
         await homePage.selectDates(DateUtils.getDateWithOffset(3));
 

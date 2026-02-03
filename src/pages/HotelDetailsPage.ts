@@ -17,10 +17,12 @@ export class HotelDetailsPage extends BasePage {
 
     // ===== Assertions =====
     async expectHotelPriceToBeVisible() {
+        await this.page.waitForLoadState('domcontentloaded');
         await expect(this.page.locator(this.locators.priceLabel()).first()).toBeVisible({ timeout: 10000 });
     }
 
     async expectHotelNameToBeVisible() {
+        await this.page.waitForLoadState('domcontentloaded');
         await expect(this.page.locator(this.locators.hotelName()).first()).toBeVisible({ timeout: 10000 });
     }
 }
