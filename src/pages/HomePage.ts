@@ -35,7 +35,6 @@ export class HomePage extends BasePage {
         super(page);
     }
 
-
     // ===== Actions =====
 
     async searchHotel(hotelName: string) {

@@ -4,7 +4,11 @@ export default defineConfig({
   testDir: './tests',
   timeout: 60000,
   fullyParallel: true,
-  reporter: 'html',
+  reporter: [
+    ['list'], 
+    ['allure-playwright', { outputFolder: 'allure-results' }],
+    ['html']
+  ],
   use: {
     baseURL: 'https://www.agoda.com/',
     trace: 'on',

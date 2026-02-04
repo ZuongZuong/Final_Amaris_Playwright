@@ -10,7 +10,8 @@
     "test:report": "npx playwright show-report",
     "test:ui:report": "npx playwright test --ui --reporter=html",
     "trace:open": "npx playwright show-trace",
-    "trace:latest": "npx playwright show-trace ./test-results/agoda-search-Agoda-Search--cb2cd-ch-for-a-hotel-successfully-chromium/trace.zip"
+    "trace:latest": "npx playwright show-trace ./test-results/agoda-search-Agoda-Search--cb2cd-ch-for-a-hotel-successfully-chromium/trace.zip",
+    "allure:report": "npx allure generate allure-results --clean -o allure-report && npx allure open allure-report"
   },
   "keywords": [],
   "author": "",
@@ -18,8 +19,10 @@
   "type": "commonjs",
   "devDependencies": {
     "@faker-js/faker": "^10.2.0",
-    "@playwright/test": "^1.58.0",
-    "@types/node": "^25.1.0"
+    "@playwright/test": "^1.58.1",
+    "@types/node": "^25.1.0",
+    "allure-commandline": "^2.36.0",
+    "allure-playwright": "^3.4.5"
   },
   "dependencies": {
     "date-fns": "^4.1.0"
