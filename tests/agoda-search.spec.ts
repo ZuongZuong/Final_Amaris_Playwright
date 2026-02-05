@@ -1,6 +1,7 @@
 import { test, expect } from './base-test';
 import { DateUtils } from '../src/utils/DateUtils';
 import { RandomUtils } from '../src/utils/RandomUtils';
+import { fail } from 'node:assert';
 
 test.describe('Agoda Search a hotel', () => {
 
@@ -8,7 +9,7 @@ test.describe('Agoda Search a hotel', () => {
         await homePage.navigateTo('/');
     });
 
-    test('should search for a hotel successfully', async ({ homePage, searchResultsPage, hotelDetailsPage }) => {
+    test('@Smoke should search for a hotel successfully', async ({ homePage, searchResultsPage, hotelDetailsPage }) => {
         // // 1. Set Destination
         await homePage.searchHotel('Muong Thanh Saigon Centre Hotel');
 

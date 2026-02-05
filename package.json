@@ -8,9 +8,8 @@
     "test:ui": "npx playwright test --ui",
     "test:headed": "npx playwright test --headed",
     "test:report": "npx playwright show-report",
-    "test:ui:report": "npx playwright test --ui --reporter=html",
     "trace:open": "npx playwright show-trace",
-    "trace:latest": "npx playwright show-trace ./test-results/agoda-search-Agoda-Search--cb2cd-ch-for-a-hotel-successfully-chromium/trace.zip",
+    "trace:latest": "npx playwright show-trace $(pwd)/test-results/$(ls -t test-results | head -1)/trace.zip",
     "allure:report": "npx allure generate allure-results --clean -o allure-report && npx allure open allure-report"
   },
   "keywords": [],

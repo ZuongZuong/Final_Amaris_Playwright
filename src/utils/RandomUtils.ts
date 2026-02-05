@@ -17,7 +17,6 @@ export class RandomUtils {
 
     }
 
-
     static getFullName() {
         return faker.person.fullName();
 
@@ -59,7 +58,6 @@ export class RandomUtils {
     static getRandomPin(): string {
         return faker.location.zipCode();
     }
-
 
     static getRandomAddress(): string {
         return faker.location.streetAddress();

@@ -1,12 +1,10 @@
 import { format, addDays } from 'date-fns';
-import { getDateWithOptions } from 'date-fns/fp';
 
 export class DateUtils {
 
     static getDateWithOffset(days = 0) {
         const date = new Date();
 
-        // plus or minus days
         date.setDate(date.getDate() + days);
 
         const day = String(date.getDate()).padStart(2, '0');
