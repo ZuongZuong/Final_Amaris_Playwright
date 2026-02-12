@@ -48,12 +48,23 @@ jobs:
           zip: true
           retention-days: 2
 
+      - name: Extract Playwright test results
+        if: always()
+        run: |
+          TOTAL=$(jq -r '.stats.expected + .stats.flaky + .stats.unexpected + .stats.skipped' test-results/results.json)
+          PASSED=$(jq -r '.stats.expected' test-results/results.json)
+          FAILED=$(jq -r '.stats.unexpected' test-results/results.json)
+
+          echo "TOTAL=$TOTAL" >> $GITHUB_ENV
+          echo "PASSED=$PASSED" >> $GITHUB_ENV
+          echo "FAILED=$FAILED" >> $GITHUB_ENV
+
       - name: Send report to Teams
         if: always()
         run: |
           curl -H "Content-Type: application/json" \
           -d '{
             "title": "🚀 Playwright Test Run Finished!",
-            "text": "🔹 Repo: ${{ github.repository }}\n🔹 Run: #${{ github.run_number }}\n🔹 Status: ${{ job.status }}\n🔗 Run Link: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            "text": "🔹 Repo: ${{ github.repository }}\n🔹 Run: #${{ github.run_number }}\n🔹 Status: ${{ job.status }}\n🧪 Total: '${TOTAL}'\n✅ Passed: '${PASSED}'\n❌ Failed: '${FAILED}'\n📊 Allure Report: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }' \
           ${{ secrets.TEAMS_WEBHOOK_URL }}
