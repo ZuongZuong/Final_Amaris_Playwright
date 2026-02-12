@@ -7,6 +7,7 @@ export default defineConfig({
   fullyParallel: true,
   reporter: [
     ['list'],
+    ['json', { outputFile: 'test-results/results.json' }],
     ['allure-playwright', { outputFolder: 'allure-results' }],
     ['html']
   ],
