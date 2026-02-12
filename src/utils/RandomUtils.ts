@@ -6,7 +6,6 @@ export class RandomUtils {
         return Math.floor(Math.random() * 7) + 1;
     }
 
-
     static getFirstName() {
         return faker.person.firstName();
 

@@ -21,7 +21,8 @@
     "@playwright/test": "^1.58.1",
     "@types/node": "^25.1.0",
     "allure-commandline": "^2.36.0",
-    "allure-playwright": "^3.4.5"
+    "allure-playwright": "^3.4.5",
+    "xlsx": "^0.18.5"
   },
   "dependencies": {
     "date-fns": "^4.1.0"

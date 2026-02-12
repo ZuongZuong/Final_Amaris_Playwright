@@ -28,7 +28,6 @@ export class HomePage extends BasePage {
         childAgeList: (age: string) => `[data-testid="title"]`,
         btnSearch: () => '[data-element-name="search-button"]',
         checkinBox: () => '[data-selenium="checkInBox"]',
-
     };
 
     constructor(page: Page) {
@@ -55,13 +54,17 @@ export class HomePage extends BasePage {
     }
 
     async increaseRoom(number: number) {
-        for (let i = 0; i < number; i++) {
+
+        // By default 1 room
+        for (let i = 1; i < number; i++) {
             await this.page.click(this.locators.room.increase());
         }
     }
 
     async increaseAdult(number: number) {
-        for (let i = 0; i < number; i++) {
+
+        // By default 2 adults
+        for (let i = 2; i < number; i++) {
             await this.page.click(this.locators.adult.increase());
         }
     }
