@@ -47,3 +47,13 @@ jobs:
           path: ./allure-report.zip
           zip: true
           retention-days: 2
+
+      - name: Send report to Teams
+        if: always()
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d '{
+            "title": "🚀 Playwright Test Run Finished!",
+            "text": "🔹 Repo: ${{ github.repository }}\n🔹 Run: #${{ github.run_number }}\n🔹 Status: ${{ job.status }}\n🔗 Run Link: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }' \
+          ${{ secrets.TEAMS_WEBHOOK_URL }}
